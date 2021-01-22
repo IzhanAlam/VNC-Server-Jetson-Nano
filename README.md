@@ -5,27 +5,27 @@ Setting up a VNC server for the jetson nano to control directly from a PC instea
 
 ON JETSON NANO:
 1. Enable VNC server each time you log in
-'''
+```
 mkdir -p ~/.config/autostart
 cp /usr/share/applications/vino-server.desktop ~/.config/autostart/.
-'''
+```
 
 2. Configure VNC Server
-'''
+```
 gsettings set org.gnome.Vino prompt-enabled false
 gsettings set org.gnome.Vino require-encryption false
-'''
+```
 
 3. Set password to VNC Server
-'''
+```
 gsettings set org.gnome.Vino authentication-methods "['vnc']"
 gsettings set org.gnome.Vino vnc-password $(echo -n 'thepassword'|base64)
-'''
+```
 
 4. Reboot
-'''
+```
 sudo reboot
-'''
+```
 
 On another Computer:
 
